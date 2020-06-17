@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <title>AXION</title>
+  </head>
+  <body class="body">
+    <svg style="display: none;">
+      <symbol id="search" viewBox="0 0 14 14">
+        <path d="M13.771 12.7518L10.4389 9.28631C11.2957 8.26788 11.7651 6.98648 11.7651 5.65249C11.7651 2.53576 9.22931 0 6.11258 0C2.99584 0 0.460083 2.53576 0.460083 5.65249C0.460083 8.76923 2.99584 11.305 6.11258 11.305C7.28264 11.305 8.39766 10.9521 9.35096 10.2821L12.7083 13.7739C12.8486 13.9196 13.0374 14 13.2396 14C13.4311 14 13.6127 13.927 13.7506 13.7943C14.0435 13.5124 14.0529 13.045 13.771 12.7518ZM6.11258 1.47456C8.41634 1.47456 10.2905 3.34873 10.2905 5.65249C10.2905 7.95625 8.41634 9.83043 6.11258 9.83043C3.80882 9.83043 1.93465 7.95625 1.93465 5.65249C1.93465 3.34873 3.80882 1.47456 6.11258 1.47456Z" fill="black"/>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 45 8">
+        <path d="M44.0469 4.21656C44.2421 4.0213 44.2421 3.70472 44.0469 3.50945L40.8649 0.327473C40.6696 0.13221 40.353 0.13221 40.1578 0.327473C39.9625 0.522735 39.9625 0.839317 40.1578 1.03458L42.9862 3.86301L40.1578 6.69143C39.9625 6.8867 39.9625 7.20328 40.1578 7.39854C40.353 7.5938 40.6696 7.5938 40.8649 7.39854L44.0469 4.21656ZM0.865601 4.36301H43.6933V3.36301H0.865601V4.36301Z"/>
+      </symbol>
+      <symbol id="video" viewBox="0 0 58 58">
+        <circle cx="29.1017" cy="28.6427" r="23.4006" fill="white"/>
+        <circle cx="29.1017" cy="28.6427" r="25.9006" stroke="white" stroke-opacity="0.2" stroke-width="5"/>
+        <path d="M26.9233 23.9053L36.4512 29.0609L26.9233 33.7383L26.9233 23.9053Z" fill="black" fill-opacity="0.5"/>
+      </symbol>
+      <symbol id="fasebook" viewBox="0 0 8 19">
+        <path d="M7.69874 0.732577L5.77991 0.729248C3.62416 0.729248 2.23102 2.27477 2.23102 4.66687V6.48238H0.301719C0.135004 6.48238 0 6.62852 0 6.80879V9.43925C0 9.61952 0.135158 9.7655 0.301719 9.7655H2.23102V16.403C2.23102 16.5833 2.36603 16.7292 2.53274 16.7292H5.04993C5.21665 16.7292 5.35165 16.5831 5.35165 16.403V9.7655H7.60746C7.77417 9.7655 7.90918 9.61952 7.90918 9.43925L7.9101 6.80879C7.9101 6.72224 7.87824 6.63934 7.82174 6.57809C7.76525 6.51683 7.68828 6.48238 7.60823 6.48238H5.35165V4.94335C5.35165 4.20363 5.51467 3.82811 6.40582 3.82811L7.69844 3.82761C7.865 3.82761 8 3.68147 8 3.50136V1.05883C8 0.87889 7.86515 0.73291 7.69874 0.732577Z"/>
+      </symbol>
+      <symbol id="instagram" viewBox="0 0 18 19">
+        <path d="M12.375 18.7292H5.625C2.51888 18.7292 0 16.2104 0 13.1042V6.35425C0 3.24812 2.51888 0.729248 5.625 0.729248H12.375C15.4811 0.729248 18 3.24812 18 6.35425V13.1042C18 16.2104 15.4811 18.7292 12.375 18.7292ZM16.3125 6.35425C16.3125 4.183 14.5462 2.41675 12.375 2.41675H5.625C3.45375 2.41675 1.6875 4.183 1.6875 6.35425V13.1042C1.6875 15.2755 3.45375 17.0417 5.625 17.0417H12.375C14.5462 17.0417 16.3125 15.2755 16.3125 13.1042V6.35425Z"/>
+        <path d="M9 14.2292C6.51487 14.2292 4.5 12.2144 4.5 9.72925C4.5 7.24412 6.51487 5.22925 9 5.22925C11.4851 5.22925 13.5 7.24412 13.5 9.72925C13.5 12.2144 11.4851 14.2292 9 14.2292ZM9 6.91675C7.44975 6.91675 6.1875 8.179 6.1875 9.72925C6.1875 11.2806 7.44975 12.5417 9 12.5417C10.5503 12.5417 11.8125 11.2806 11.8125 9.72925C11.8125 8.179 10.5503 6.91675 9 6.91675Z"/>
+        <path d="M13.8375 13.967C14.1686 13.967 14.4371 14.2355 14.4371 14.5666C14.4371 14.8978 14.1686 15.1663 13.8375 15.1663C13.5063 15.1663 13.2379 14.8978 13.2379 14.5666C13.2379 14.2355 13.5063 13.967 13.8375 13.967Z"/>
+      </symbol>
+      <symbol id="pinterest" viewBox="0 0 16 19">
+        <path d="M11.0534 1.67419C9.9823 0.645921 8.49997 0.0795898 6.87952 0.0795898C4.40421 0.0795898 2.88178 1.09426 2.04052 1.94541C1.00372 2.99436 0.40918 4.38715 0.40918 5.76674C0.40918 7.49891 1.13371 8.82841 2.34702 9.32302C2.42848 9.3564 2.51044 9.37321 2.59079 9.37321C2.84675 9.37321 3.04956 9.20573 3.11983 8.93707C3.16078 8.78294 3.25569 8.40271 3.29694 8.23764C3.38528 7.91166 3.31391 7.75487 3.12128 7.52786C2.77036 7.11265 2.60695 6.62165 2.60695 5.98265C2.60695 4.08461 4.02027 2.06737 6.63972 2.06737C8.71814 2.06737 10.0092 3.24866 10.0092 5.15022C10.0092 6.35018 9.75078 7.46146 9.28131 8.27949C8.95508 8.84788 8.38142 9.52543 7.50076 9.52543C7.11993 9.52543 6.77784 9.36899 6.56198 9.09627C6.35806 8.83845 6.29086 8.50539 6.37287 8.15829C6.46552 7.76611 6.59184 7.35702 6.7141 6.96153C6.93709 6.23922 7.14788 5.557 7.14788 5.0127C7.14788 4.0817 6.57553 3.45614 5.72378 3.45614C4.6413 3.45614 3.79326 4.55558 3.79326 5.95911C3.79326 6.64745 3.9762 7.16229 4.05901 7.35998C3.92265 7.93776 3.1122 11.3727 2.95847 12.0205C2.86959 12.3986 2.33412 15.3851 3.22041 15.6232C4.2162 15.8908 5.1063 12.9821 5.19689 12.6535C5.27032 12.3861 5.52724 11.3754 5.68468 10.7541C6.16539 11.2171 6.9394 11.5301 7.69253 11.5301C9.11232 11.5301 10.3892 10.8912 11.2879 9.73121C12.1595 8.60607 12.6396 7.03787 12.6396 5.31569C12.6396 3.96933 12.0614 2.64203 11.0534 1.67419Z"/>
+      </symbol>
+      <symbol id="twitter" viewBox="0 0 16 19">
+        <path d="M18.0001 2.00408C17.3376 2.29764 16.6268 2.49673 15.8799 2.58561C16.6425 2.12893 17.2263 1.40458 17.503 0.544111C16.7876 0.967023 15.998 1.27411 15.1566 1.44058C14.4829 0.721846 13.5246 0.27417 12.4616 0.27417C10.4224 0.27417 8.76895 1.92761 8.76895 3.96573C8.76895 4.25479 8.80157 4.53711 8.86457 4.80708C5.79615 4.65296 3.0753 3.18287 1.25427 0.949023C0.935947 1.49343 0.754859 2.12779 0.754859 2.80493C0.754859 4.08608 1.40724 5.21649 2.39706 5.87784C1.79192 5.85761 1.22277 5.69114 0.724506 5.41443V5.46055C0.724506 7.24896 1.99777 8.74155 3.68606 9.08125C3.37674 9.16449 3.05056 9.21061 2.71312 9.21061C2.47468 9.21061 2.24409 9.18699 2.01801 9.14199C2.48815 10.6098 3.85142 11.6773 5.46662 11.7065C4.20348 12.6963 2.61077 13.2846 0.880859 13.2846C0.5828 13.2846 0.289211 13.2666 0.000152588 13.234C1.63448 14.2834 3.57474 14.8953 5.66009 14.8953C12.4527 14.8953 16.1656 9.26911 16.1656 4.38979L16.1532 3.91176C16.8787 3.39432 17.5063 2.7442 18.0001 2.00408Z"/>
+    </symbol>
+    </svg>
+    <div class="conteiner">
+      <header class="header">
+        <div class="header__logo-wrap">
+          <div class="header__logo">
+            <img class="header__logo-img desktop " src="img/logo.png" alt="">
+            <img class="header__logo-img ipad" src="img/axion-logo.png" alt="">
+          </div>
+          <div class="header__link-wrap">
+            <a class="header__link" href="#">shop</a>
+            <a class="header__link" href="#">news</a>
+            <a class="header__link" href="#">team</a>
+            <a class="header__link" href="#">legacy</a>
+            <a class="header__link" href="#">help</a>
+          </div>
+        </div>
+        <div class="header__input-wrap">
+          <div class="header__search">
+            <input class="header__search-input" type="text" name="" value="">
+            <svg class="header__search-img">
+                <use xlink:href="#search"></use>
+            </svg>
+          </div>
+          <div class="header__input">
+            <a class="header__link" href="#">sign in</a>
+            <a class="header__link" href="#">cart 1</a>
+            <img class="header__lang" src="img/lang.png" alt="">
+          </div>
+        </div>
+        <div class="burger ipad">
+          <img class="burger__img"src="img/burger.png" alt="">
+        </div>
+      </header>
+      <div class="titel">
+        <img class="title__img" src="img/rob-potter.jpg" alt="">
+        <div class="title__text">
+          <h1 class="title__text-h1">Legendary footwear reborn.</h1>
+          <div class="title__text-text">
+            <span class="title__text-text">Shop now</span>
+            <svg class="text-arrow">
+              <use xlink:href="#arrow"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <main class="product">
+        <h2 class="section__h2">Featured product</h2>
+        <div class="product__item-wrap">
+          <div class="product__item">
+            <div class="product__item-img">
+              <img class="product__img" src="img/product1.jpg" alt="">
+              <div class="product__item-border">
+              </div>
+            </div>
+            <div class="product__item-text">
+              <p class="product__name">Atlas Black/Rasta Axion</p>
+              <p class="product__prise">$89.00</p>
+            </div>
+            <div class="product__color">
+              <a class="color__atlas1" href="#"></a>
+              <a class="color__atlas2" href="#"></a>
+              <a class="color__atlas3" href="#"></a>
+              <a class="color__atlas4" href="#"></a>
+            </div>
+          </div>
+          <div class="product__item mobile" >
+            <div class="product__item-img">
+              <img class="product__img" src="img/product2.jpg" alt="">
+              <div class="product__item-border">
+              </div>
+            </div>
+            <div class="product__item-text">
+              <p class="product__name">Camel/Chili Pepper Axion</p>
+              <p class="product__prise">$74.00</p>
+            </div>
+            <div class="product__color">
+              <a class="color__atlas1" href="#"></a>
+              <a class="color__camel2" href="#"></a>
+              <a class="color__atlas3" href="#"></a>
+              <a class="color__atlas4" href="#"></a>
+            </div>
+          </div>
+          <div class="product__item desktop">
+            <div class="product__item-img">
+              <img class="product__img" src="img/product3.jpg" alt="">
+              <div class="product__item-border">
+              </div>
+            </div>
+            <div class="product__item-text">
+              <p class="product__name">Mandel Smoke/Rust Axion</p>
+              <p class="product__prise">$69.00</p>
+            </div>
+            <div class="product__color">
+              <a class="color__atlas1" href="#"></a>
+              <a class="color__mandel2" href="#"></a>
+              <a class="color__atlas3" href="#"></a>
+              <a class="color__atlas4" href="#"></a>
+            </div>
+          </div>
+          <div class="product__item desktop">
+            <div class="product__item-img">
+              <img class="product__img" src="img/product4.jpg" alt="">
+            </div>
+            <div class="product__item-text">
+              <p class="product__name">Cloud/Electric Blue Axion</p>
+              <p class="product__prise">$69.00</p>
+            </div>
+            <div class="product__color">
+              <a class="color__atlas1" href="#"></a>
+              <a class="color__cloud2" href="#"></a>
+              <a class="color__atlas3" href="#"></a>
+              <a class="color__atlas4" href="#"></a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <section class="section">
+        <div class="section__titel">
+          <div class="section__titel-video">
+            <img class="section__titel-img" src="img/rectangle.jpg" alt="">
+            <svg class="section__titel-img-video">
+              <use xlink:href="#video"></use>
+            </svg>
+          </div>
+          <div class="section__titel-text">
+            <h3 class="section__titel-h3"> Legendary footwear reborn</h3>
+            <p class="section__titel text-small">We are a brand with a history and are
+              relaunching for 2019. We’ve been a part of the skater’s family ever
+              since it’s early teenage years. And now we presentate a new footwear
+              collection.</p>
+            <div class="title__text-text">
+              <span class="title__text-text desktop ">Learn more</span>
+              <svg class="text-arrow desktop">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="section__content">
+          <h2 class="section__content-h2">Recent stories</h2>
+          <div class="section__content-wrap">
+            <div class="section__content-item">
+              <img class="section__content-img" src="img/presents.jpg" alt="">
+              <h4 class="section__content-h4">Presents Justin Anagoa</h4>
+              <span class="section__content-text">Anagoa’s been a part of the skater’s
+                family ever since his early teenage years. He’s been known to go
+                big on and off the board, but it’s been rare we get a glimpse
+                into how Anagoa lives his day-to-day, to see what makes Anagoa
+                tick.
+              </span>
+              <div class="section__text-arrow-wrap">
+                <div class="section__text-arrow">
+                  <span class="text__arrow">Learn more</span>
+                  <svg class="section__text-arrow text-arrow">
+                    <use xlink:href="#arrow"></use>
+                  </svg>
+                </div>
+                <time class="section__text-time">11.08.2018</time>
+              </div>
+            </div>
+            <div class="section__content-item mobile">
+              <img class="section__content-img" src="img/first.jpg" alt="">
+              <h4 class="section__content-h4">First Frontside flip</h4>
+              <span class="section__content-text">Yoon recently discusses his first
+                time shooting a signature Andrew Reynolds frontside flip on The
+                Berrics. Click the image below to see the full gallery and read up
+                on what happened that day. Photo:Yoon Sul
+              </span>
+              <div class="section__text-arrow-wrap">
+                <div class="section__text-arrow">
+                  <span class="text__arrow">Learn more</span>
+                  <svg class="section__text-arrow text-arrow">
+                    <use xlink:href="#arrow"></use>
+                  </svg>
+                </div>
+                <time class="section__text-time">17.08.2018</time>
+              </div>
+            </div>
+            <div class="section__content-item desktop">
+              <img class="section__content-img" src="img/kevin.jpg" alt="">
+              <h4 class="section__content-h4">Kevin Baekkel is Pro</h4>
+              <span class="section__content-text">Creature proudly announced today
+                that they’re officially adding Kevin Baekkel to their pro roster.
+                After paying his dues for years, killing it on last years Thrasher
+                King of the Road, and constantly lighting every spot he hits on fire.
+              </span>
+              <div class="section__text-arrow-wrap">
+                <div class="section__text-arrow">
+                  <span class="text__arrow">Learn more</span>
+                  <svg class="section__text-arrow text-arrow">
+                    <use xlink:href="#arrow"></use>
+                  </svg>
+                </div>
+                <time class="section__text-time">29.07.2018</time>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="foto">
+          <div class="foto__backgraund ipad">
+          </div>
+          <span class="foto__text">#AXIONfootwear</span>
+          <img class="foto__img ipad" src="img/foto5.jpg" alt="">
+          <img class="foto__img" src="img/foto2.jpg" alt="">
+          <img class="foto__img" src="img/foto7.jpg" alt="">
+          <img class="foto__img" src="img/foto4.jpg" alt="">
+          <img class="foto__img" src="img/foto3.jpg" alt="">
+          <img class="foto__img" src="img/foto6.jpg" alt="">
+          <img class="foto__img mobile" src="img/foto5.jpg" alt="">
+          <img class="foto__img mobile" src="img/foto1.jpg" alt="">
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="footer__wrap">
+        <div class="footer__item">
+          <h5 class="footer__item-h5">MY ACCOUNT</h5>
+          <a class="footer__item-link" href="#">Login</a>
+          <a class="footer__item-link" href="#">Wish List</a>
+          <a class="footer__item-link" href="#">Order History</a>
+          <a class="footer__item-link" href="#">Track order</a>
+          <a class="footer__item-link" href="#">Gift cards</a>
+        </div>
+        <div class="footer__item">
+          <h5 class="footer__item-h5">CUSTOMER SERVICE</h5>
+          <a class="footer__item-link" href="#">Contact us</a>
+          <a class="footer__item-link" href="#">Help/FAQ</a>
+          <a class="footer__item-link" href="#">Shipping</a>
+          <a class="footer__item-link" href="#">Returns</a>
+          <a class="footer__item-link" href="#">Size guide</a>
+          <a class="footer__item-link" href="#">Holiday shopping</a>
+        </div>
+        <div class="footer__item">
+          <h5 class="footer__item-h5">MISCELLANEOUS</h5>
+          <a class="footer__item-link" href="#">About Us</a>
+          <a class="footer__item-link" href="#">Careers</a>
+          <a class="footer__item-link" href="#">Privacy Policy</a>
+          <a class="footer__item-link" href="#">Terms & Conditions</a>
+          <a class="footer__item-link" href="#">Ethical Policy</a>
+          <a class="footer__item-link" href="#">Homepage US/UK</a>
+        </div>
+        <div class="footer__item">
+          <h5 class="footer__item-h5">NEWSLETTER SIGN UP</h5>
+          <span class="footer__item-text">
+            Get 10% Off Your Next Order!
+          </span>
+          <button class="footer__item-button" type="button" name="button">SIGN UP</button>
+          <div class="footer__socnets-wrap">
+            <svg class="socnets__icon">
+              <use xlink:href="#fasebook"></use>
+            </svg>
+            <svg class="socnets__icon">
+              <use xlink:href="#twitter"></use>
+            </svg>
+            <svg class="socnets__icon">
+              <use xlink:href="#instagram"></use>
+            </svg>
+            <svg class="socnets__icon">
+              <use xlink:href="#pinterest"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <p class="footer__item-develiper">© 2019 Axion. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
