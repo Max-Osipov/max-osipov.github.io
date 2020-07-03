@@ -1,5 +1,3 @@
-/* box-sizing позволяет задавать свойства
-width и height для блока, а не его содержимого, */
 * {
   box-sizing: border-box;
 }
